@@ -1,0 +1,18 @@
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<form method='POST' target="sendframe" action="sendmail.php">
+  <label for="name" style="font-weight:bold">NAME</label><br>
+  <input type="text" id="name" name="name" required><br><br>
+  <label for="email" style="font-weight:bold">EMAIL</label><br>
+  <input type="email" id="email" name="email" required><br><br>
+  <label for="email" style="font-weight:bold">MESSAGE</label><br>
+  <textarea name="message" required rows="8" cols="68"></textarea><br>
+  <input type="checkbox" required> I'm agree with teh privacy policy </a><br><br>
+  
+  <div class="g-recaptcha" data-sitekey="your-recaptcha-key"></div>
+  
+  <input type="submit" value="SEND">
+</form>
+
+<br>
+
+<iframe name="sendframe"></iframe>
