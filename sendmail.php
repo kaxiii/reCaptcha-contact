@@ -1,5 +1,6 @@
 <?php
 
+// CAPTCHA CHECK //////////////////////////////////////////////////
 if ($_POST['g-recaptcha-response'] == '') {
     echo "Invalid Captcha";
     } 
@@ -21,19 +22,35 @@ else {
     $context = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
     
-    $validar = json_decode($result);
+    $validate = json_decode($result);
 }
+///////////////////////////////////////////////////////////////////
 
-if ($validar->success) {
-    //echo "Mail";
+if ($validate->success) {
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $header = "Message from " . $name . " - " . $email;
     $message = $_POST['message'];
+
+    $subject = "Message from " . $name . " - " . $email;
+
+    // Set content-type header for sending HTML email 
+    $headers = "MIME-Version: 1.0" . "\r\n"; 
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    $headers .= 'From: '.$name.'<'.$email.'>' . "\r\n"; 
+    $headers .= 'Cc: ccmail@myweb.com' . "\r\n";
+
+    // Your HTML here
+    $m = "
+        <style type='text/css'>
+            p {
+                color: firebrick;
+            }
+        </style>
+        <p>". $message ."</p>";
     
 
-    if(mail('atencioncliente@hidalgosgroup.com', $header, $message)){
-        echo "Mail sended";
+    if(mail('contact@myweb.com', $subject, $m, $headers)) {
+        echo '<b style="color: firebrick;"> Mail Sended </b>';
     }
 
     else {

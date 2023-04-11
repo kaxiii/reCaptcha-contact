@@ -1,0 +1,59 @@
+* {
+    font-family: "Montserrat";
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    width: 800px;
+    border-radius: 50px;
+    background-color: lightcoral;
+    padding: 50px;
+}
+
+label {
+    color: white;
+}
+
+input[type=text], input[type=email] {
+    width: 100%;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type=checkbox] {
+    margin-top: 15px;
+}
+
+textarea {
+    width: 100%;
+    border: none;
+    resize: vertical;
+    border-radius: 5px;
+}
+
+input[type=submit] {
+    border: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: seagreen;
+    color: white;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: mediumseagreen;
+}
+
+#feedback {
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff11;
+}

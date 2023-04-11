@@ -1,18 +1,50 @@
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<form method='POST' target="sendframe" action="sendmail.php">
-  <label for="name" style="font-weight:bold">NAME</label><br>
-  <input type="text" id="name" name="name" required><br><br>
-  <label for="email" style="font-weight:bold">EMAIL</label><br>
-  <input type="email" id="email" name="email" required><br><br>
-  <label for="email" style="font-weight:bold">MESSAGE</label><br>
-  <textarea name="message" required rows="8" cols="68"></textarea><br>
-  <input type="checkbox" required> I'm agree with teh privacy policy </a><br><br>
-  
-  <div class="g-recaptcha" data-sitekey="your-recaptcha-key"></div>
-  
-  <input type="submit" value="SEND">
-</form>
+<!DOCTYPE html>
+<html lang="en">
 
-<br>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<iframe name="sendframe"></iframe>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+  <title>RECAPTCHA FORM</title>
+</head>
+
+<body>
+
+  <div class="content">
+
+    <div class="form">
+
+      <form method='POST' target="sendframe" action="sendmail.php">
+        <label for="name" style="font-weight:bold">NAME</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email" style="font-weight:bold">EMAIL</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="email" style="font-weight:bold">MESSAGE</label><br>
+        <textarea name="message" required rows="8" cols="68"></textarea><br>
+
+        <input type="checkbox" required> I'm agree with the privacy policy </a><br><br>
+        
+        <div class="g-recaptcha" data-sitekey="your-recaptcha-key"></div>
+        
+        <input type="submit" value="SEND">
+      </form>
+      
+      <br>
+      
+      <iframe id="feedback" name="sendframe"></iframe>
+
+    </div>
+
+  </div>
+  
+</body>
+
+</html>
